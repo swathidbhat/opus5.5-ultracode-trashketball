@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Trashketball</title>
+    <meta name="description" content="A 3D paper-ball trashketball game in two levels: a Severance-style office and an oceanfront beach house." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="theme-lumon">
+    <canvas id="scene" aria-label="Trashketball 3D view"></canvas>
+
+    <div id="hud" aria-live="polite">
+      <section class="card level-card">
+        <div class="level-tag" id="level-tag">Level 1</div>
+        <h1 class="level-name" id="level-name">Macrodata Refinement</h1>
+        <div class="level-sub" id="level-sub">Lumon Industries · Severed Floor</div>
+      </section>
+
+      <section class="card score-card">
+        <div class="score-line">
+          <span class="score" id="score">0</span>
+          <span class="goal">/ <span id="goal">100</span></span>
+        </div>
+        <div class="bar"><i id="bar-fill"></i></div>
+        <div class="stats">
+          <span id="stat-throws">0 throws</span>
+          <span id="stat-acc">0% made</span>
+          <span id="stat-streak">streak 0</span>
+        </div>
+      </section>
+
+      <div id="toast" class="toast"></div>
+
+      <section class="aim-readout" id="aim-readout">
+        <div class="meter"><i id="power-fill"></i></div>
+        <div class="aim-values">
+          <span>Power <b id="aim-power">40%</b></span>
+          <span>Arc <b id="aim-arc">50°</b></span>
+          <span>Aim <b id="aim-yaw">0°</b></span>
+        </div>
+      </section>
+
+      <div class="hint" id="hint">Drag to aim · release to throw · scroll for arc</div>
+
+      <nav class="controls">
+        <div class="arc-buttons">
+          <button type="button" id="btn-arc-down" title="Flatter arc (S)" aria-label="Flatter arc">Arc −</button>
+          <button type="button" id="btn-arc-up" title="Higher arc (W)" aria-label="Higher arc">Arc +</button>
+        </div>
+        <button type="button" id="btn-traj" title="Trajectory guide (T)">Guide: Full</button>
+        <button type="button" id="btn-sound" title="Sound (M)">Sound: On</button>
+      </nav>
+    </div>
+
+    <div id="overlay" class="overlay">
+      <div class="overlay-card" id="overlay-card"></div>
+    </div>
+
+    <div id="fade" class="fade"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
